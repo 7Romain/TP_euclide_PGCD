@@ -3,27 +3,22 @@ import javax.swing.JOptionPane;
 public class App {
     public static void main(String[] args) {
 
-        int num1 = 21;// Integer.valueOf(JOptionPane.showInputDialog(null, "Entrez un chiffre entier
-                      // supérieur à zéro."));
-        int num2 = 15; // Integer.valueOf(JOptionPane.showInputDialog(null, "Entrez un autre chiffre
-                       // entier supérieur à zéro."));
+        int num1 = Integer.valueOf(JOptionPane.showInputDialog(null, "Entrez un chiffre entier supérieur à zéro."));
+        int num2 = Integer
+                .valueOf(JOptionPane.showInputDialog(null, "Entrez un autre chiffre entier supérieur à zéro."));
         int max;
         int petit;
-        int reste;
+        int reste = 2;
 
-        do {
-            if (num1 > num2) {
-                petit = num2;
-                max = num1;
-            } else {
-                max = num2;
-                petit = num1;
-            }
+        max = Math.max(num1, num2);
+        petit = Math.min(num1, num2);
+        while (reste != 0 && reste != 1) {
 
             reste = max % petit;
-            petit = max;
-            max = reste;
-        } while (reste != 0 || reste != 1);
+            max = petit;
+            petit = reste;
+
+        }
 
         if (reste == 1) {
             System.out.println(String.format(
