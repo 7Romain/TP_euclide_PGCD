@@ -1,11 +1,8 @@
-import javax.swing.JOptionPane;
+package application;
 
-public class App {
-    public static void main(String[] args) {
+public class Calcul {
+    public int calcuerPGCD(int num1, int num2) {
 
-        int num1 = Integer.valueOf(JOptionPane.showInputDialog(null, "Entrez un chiffre entier supérieur à zéro."));
-        int num2 = Integer
-                .valueOf(JOptionPane.showInputDialog(null, "Entrez un autre chiffre entier supérieur à zéro."));
         int max;
         int petit;
         int reste = 2;
@@ -24,6 +21,8 @@ public class App {
             System.out.println(String.format(
                     "Le Plus Grand Commun Diviseur de %s et de %s calculé avec la méthode d'Euclide est : %s", num1,
                     num2, reste));
+            return reste;
+
         }
         if (reste == 0) {
             System.out.println(String.format(
@@ -31,6 +30,7 @@ public class App {
                     num2, max));
 
         }
+        return max;
 
     }
 }
